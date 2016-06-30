@@ -1,0 +1,28 @@
+<h1>Listing whats</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @whats.each do |what| %>
+  <tr>
+    <td><%= what.title %></td>
+    <td><%= what.description %></td>
+    <td><%= what.name %></td>
+    <td><%= link_to 'Show', what %></td>
+
+    <td><%= link_to 'answers', '/answers/' + what.id.to_s%></td>    
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New What', new_what_path %>
